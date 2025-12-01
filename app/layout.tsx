@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pixelify_Sans, Inter, Jersey_10 } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Jersey_10 } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./ThemeProvider";
+import { Provider } from "./Provider";
 import {
   ClerkProvider,
   SignInButton,
@@ -10,7 +10,6 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -48,14 +47,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${GameFont.variable} ${inter.variable} antialiased`}
       >
-        <ThemeProvider 
+        <Provider 
         attribute="class"
         defaultTheme="dark" enableSystem  disableTransitionOnChange
 
         >
 
         {children}
-        </ThemeProvider>
+        </Provider>
       </body>
     </html>
     </ClerkProvider>
