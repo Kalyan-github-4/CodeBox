@@ -60,23 +60,23 @@ const courses = [
 
 
 const Header = () => {
- const {user} = useUser();
+  const { user } = useUser();
 
   return (
-    <div className='fixed z-99 max-w-7xl p-4 flex justify-between items-center w-full'>
-      <div className='flex gap-2 items-center'>
+    <div className='fixed z-50 max-w-7xl p-4 flex justify-between items-center w-full backdrop-blur-xs'>
+      <div className='flex gap-4 items-center'>
 
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
-        <h1 className="font-bold text-3xl font-game">CodeBox</h1>
+        <h1 className="text-3xl font-game tracking-wide">CodeBox</h1>
       </div>
 
       {/* Navigation Section */}
       <NavigationMenu>
-        <NavigationMenuList className="gap-8">
+        <NavigationMenuList className="gap-8 font-game">
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-2xl tracking-wide">Courses</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid md:grid-cols-2 gap-2 sm:w-[400px] md:w-[500px] lg:w-{600px]">
+              <ul className="grid md:grid-cols-2 gap-2 sm:w-[400px] md:w-[500px] lg:w-[600px]">
                 {courses.map((course, index) => (
                   <div key={index} className="p-4 hover:bg-accent rounded-xl cursor-pointer">
                     <h2 className="font-medium">{course.name}</h2>
@@ -87,20 +87,20 @@ const Header = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuLink>
+          <NavigationMenuItem >
+            <NavigationMenuLink className="text-xl tracking-wide">
               <Link href={"/projects"}>Projects</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink>
+            <NavigationMenuLink className="text-xl tracking-wide">
               <Link href={"/pricing"}>Pricing</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink>
+            <NavigationMenuLink className="text-xl tracking-wide">
               <Link href={"/contact"}>Contact Us</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -111,13 +111,13 @@ const Header = () => {
       {/* Login Button  */}
       {!user ?
 
-<Link href={'/sign-in'}>
-      <Button className="font-game text-2xl" variant="pixel">Sign In</Button>
-      </Link>
-      : <div className="flex gap-4 items-center">
-        <Button className="font-game text-2xl" variant="pixel">Dashboard</Button>
-        <UserButton/>
-      </div>}
+        <Link href={'/sign-in'}>
+          <Button className="font-game text-2xl" variant="pixel">Sign In</Button>
+        </Link>
+        : <div className="flex gap-4 items-center">
+          <Button className="font-game text-2xl" variant="pixel">Dashboard</Button>
+          <UserButton appearance={{ elements: { userButtonTrigger: "outline-none" } }} />
+        </div>}
     </div>
   )
 }
