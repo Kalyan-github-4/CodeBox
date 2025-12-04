@@ -64,11 +64,12 @@ const Header = () => {
 
   return (
     <div className='fixed z-50 max-w-7xl p-4 flex justify-between items-center w-full'>
-      <div className='flex gap-4 items-center'>
+        <Link href="/" className='flex gap-4 items-center'>
+          <Image src="/logo.png" alt="Logo" width={40} height={40} />
+          <h1 className="text-3xl font-game tracking-wide">CodeKing</h1>
 
-        <Image src="/logo.png" alt="Logo" width={40} height={40} />
-        <h1 className="text-3xl font-game tracking-wide">CodeBox</h1>
-      </div>
+        </Link>
+     
 
       {/* Navigation Section */}
       <NavigationMenu>
