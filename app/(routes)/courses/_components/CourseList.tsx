@@ -12,9 +12,25 @@ export type Course = {
   description: string,
   bannerImage: string,
   level: string,
-  tags: string | null
+  tags: string | null,
+  chapters: Chapter[]
 }
 
+export type Chapter = {
+  id: number,
+  chapterId: number,
+  courseId: number,
+  description: string,
+  name: string,
+  exercises: Exercise[]
+}
+
+export type Exercise = {
+  name: string,
+  difficulty: string,
+  slug: string,
+  xp: number
+}
 
 const CourseList = () => {
 
