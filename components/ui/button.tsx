@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap  text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -20,7 +20,7 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         pixel:
-          "w-full px-4 py-2 bg-yellow-400 text-black border-2 border-black shadow-[7px_7px_0_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0_0_#000] active:translate-x-2 active:translate-y-2 active:shadow-none font-game text-2xl cursor-pointer transition-all duration-150",
+          "w-full px-4 py-2 bg-linear-to-r from-yellow-400 to-yellow-500 hover:bg-linear-to-r hover:from-yellow-300 hover:to-yellow-400 text-black border-2 border-black shadow-[7px_7px_0_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0_0_#000] active:translate-x-2 active:translate-y-2 active:shadow-none font-game text-2xl cursor-pointer transition-all duration-150",
         pixelDisabled:
           "w-full px-4 py-2 bg-gray-300 text-gray-500 border-2 border-black shadow-[7px_7px_0_0_#000] translate-x-0 translate-y-0 shadow-[7px_7px_0_0_#000] font-game text-2xl cursor-not-allowed opacity-60 transition-all duration-150 cursor-not-allowed",
 
