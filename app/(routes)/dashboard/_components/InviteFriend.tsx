@@ -1,22 +1,90 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import Image from 'next/image'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import Image from "next/image"
+import { useState } from "react"
 
 const InviteFriend = () => {
+    const [email, setEmail] = useState("")
+    const [isCopied, setIsCopied] = useState(false)
+
+    const referralCode = "CODE2024"
+    const referralLink = "https://codingmastery.com/invite/CODE2024"
+
+    const handleInvite = () => {
+        if (!email) return
+        console.log("Inviting:", email)
+        setEmail("")
+    }
+
+    const copyToClipboard = (text: string) => {
+        navigator.clipboard.writeText(text)
+        setIsCopied(true)
+        setTimeout(() => setIsCopied(false), 2000)
+    }
+
     return (
-        <div className='flex flex-col items-center mt-8 gp-4 rounded-xl border p-4 bg-zinc-900'>
-            <Image src={'/mail.png'} alt="Invite Friend" height={80} width={80} />
-            <h2 className='font-game text-2xl text-gray-300'>Invite Friend</h2>
-            <p className='font-game text-xl text-gray-400'>Having Fun? Share the love with your friends! Enter an email to send an invite.</p>
+        <section className="relative mt-8 overflow-hidden rounded-xl border border-green-500/30 bg-slate-900/80 p-6 backdrop-blur-sm">
+            {/* Decorative blobs */}
+            <div className="absolute right-6 top-6 h-16 w-16 rounded-full bg-green-500/10 blur-md" />
+            <div className="absolute bottom-6 left-6 h-12 w-12 rounded-full bg-emerald-500/10 blur-md" />
 
-            <div className='grid grid-cols-3 w-full gap-4 p-4 items-center'>
+            <div className="relative z-10 mx-auto max-w-3xl text-center">
+                {/* Icon */}
+                <div className="mb-4 flex justify-center">
+                    <div className="relative rounded-full border border-green-500/30 bg-green-900/30 p-4">
+                        <div className="absolute -inset-2 rounded-full bg-green-500/20 blur-sm" />
+                        <Image
+                            src="/mail.png"
+                            alt="Invite Friend"
+                            width={56}
+                            height={56}
+                            className="relative"
+                        />
+                    </div>
+                </div>
 
-                <Input placeholder='Enter Invite Email' className='col-span-2' />
-                <Button variant={'pixel'} size={'lg'}>Invite</Button>
+                {/* Heading */}
+                <h2 className="mb-2 font-game text-4xl text-white">
+                    Invite a Friend
+                </h2>
+
+                <p className="mx-auto mb-8 max-w-xl font-game text-gray-300 text-xl">
+                    Share the learning journey and
+                    <span className="ml-1 text-yellow-300">earn rewards together.</span>
+                </p>
+
+                {/* Invite Input */}
+                <div className="mx-auto mb-10 max-w-xl">
+                    <div className="grid grid-cols-3 gap-4 items-center">
+                        <Input
+                            type="email"
+                            placeholder="friend@example.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="h-12 col-span-2 border border-green-500/30 bg-slate-900/50 pl-5 font-game text-white placeholder:text-gray-500 focus:border-green-500/60 rounded-sm" />
+
+                        <Button
+                            size="lg"
+                            variant="pixel"
+                            // disabled={!email}
+                            onClick={handleInvite}
+                            className="h-11 rounded-none"
+                        >
+                            Invite
+                        </Button>
+                    </div>
+                </div>
+
+                {/* Footer */}
+                <div className="border-t border-gray-800 pt-4">
+                    <p className="font-game text-sm text-gray-500">
+                        ✨ Share with up to 5 friends per month ✨
+                    </p>
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 
