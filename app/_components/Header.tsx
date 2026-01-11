@@ -103,12 +103,12 @@ const Header = () => {
 
   return (
     <div className='fixed z-50 max-w-7xl p-4 flex justify-between items-center w-full backdrop-blur-md bg-slate-900/80 border-b border-blue-500/20 rounded-b-2xl shadow-lg shadow-blue-500/10'>
-        <Link href="/" className='flex gap-3 items-center group'>
+        <Link href="/" className='flex gap-4 items-center group'>
           <div className="transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
             <PixelLogo />
           </div>
-          <h1 className="text-3xl font-game tracking-wide bg-linear-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent group-hover:from-yellow-300 group-hover:to-orange-300 transition-all duration-300">
-            CodeKing
+          <h1 className="text-4xl font-game tracking-wider bg-linear-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent group-hover:from-yellow-300 group-hover:to-orange-300 transition-all duration-300">
+            CODEKING
           </h1>
         </Link>
      
@@ -166,7 +166,7 @@ const Header = () => {
           </Button>
         </Link>
         : 
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-5 items-center">
           <Link href={"/dashboard"}>
             <Button className="font-game text-xl relative group overflow-hidden" variant="pixel">
               <span className="relative z-10">DASHBOARD</span>
