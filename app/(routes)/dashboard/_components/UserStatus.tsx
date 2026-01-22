@@ -43,10 +43,10 @@ const UserStatus = () => {
                         <div className="relative">
                             <div className="absolute inset-0 bg-yellow-500/20 blur-sm rounded-full animate-pulse"></div>
                             <Image
-                                src={'/star.png'}
+                                src={'/Star.gif'}
                                 alt="star"
-                                width={50}
-                                height={50}
+                                width={70}
+                                height={70}
                                 className="relative drop-shadow-[0_0_10px_rgba(250,204,21,0.3)]"
                             />
                         </div>
@@ -66,10 +66,10 @@ const UserStatus = () => {
                         <div className="relative">
                             <div className="absolute inset-0 bg-orange-500/20 blur-sm rounded-full animate-pulse" style={{ animationDuration: '1.5s' }}></div>
                             <Image
-                                src={'/fire.png'}
+                                src={'/Fire.gif'}
                                 alt="fire"
-                                width={50}
-                                height={50}
+                                width={70}
+                                height={70}
                                 className="relative drop-shadow-[0_0_10px_rgba(249,115,22,0.3)]"
                             />
                         </div>
@@ -90,10 +90,10 @@ const UserStatus = () => {
                         <div className="relative">
                             <div className="absolute inset-0 bg-red-500/20 blur-sm rounded-full"></div>
                             <Image
-                                src={'/xp.png'}
+                                src={'/Coin.gif'}
                                 alt="xp"
-                                width={50}
-                                height={50}
+                                width={70}
+                                height={70}
                                 className="relative drop-shadow-[0_0_10px_rgba(34,197,94,0.3)]"
                             />
                         </div>

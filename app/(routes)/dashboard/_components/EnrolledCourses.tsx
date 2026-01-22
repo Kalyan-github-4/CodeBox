@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 type EnrolledCourse = {
-  id: string;
-  title: string;
-  progress: number;
+    id: string;
+    title: string;
+    progress: number;
 }
 
 const EnrolledCourses = () => {
@@ -27,9 +27,9 @@ const EnrolledCourses = () => {
 
             {/* Empty State */}
             {enrolledCourses?.length === 0 ? (
-                <div className="relative p-8 rounded-xl border-2 border-blue-500/30 bg-slate-900/60 
+                <div className="relative p-8 rounded-2xl border-2 border-blue-500/30 bg-slate-900/60 
                     backdrop-blur-sm overflow-hidden text-center group hover:border-blue-500/50 transition-all duration-300">
-                    
+
                     {/* Background pattern */}
                     <div className="absolute inset-0 opacity-10">
                         <div className="absolute top-1/4 left-1/4 w-30 h-30 bg-blue-700 blur-2xl rounded-full"></div>
@@ -39,35 +39,41 @@ const EnrolledCourses = () => {
                     {/* Content */}
                     <div className="relative z-10 px-8 font-game">
                         {/* Animated icon */}
-                        
-                        <div className="inline-flex p-4 rounded-full bg-slate-900/50 border-2 border-blue-500/30 mb-6 group-hover:border-blue-500/60 group-hover:bg-blue-950/50 transition-all duration-300">
-                        
-                            <Image 
-                                src={'/books.png'} 
-                                alt="book" 
-                                width={70} 
-                                height={70}
-                                className="opacity-90"
-                            />
+                        <div className="relative inline-flex items-center justify-center mb-6 group">
+
+                            {/* Glow */}
+                            <div className="absolute -inset-6 rounded-full bg-blue-500/30 blur-2xl opacity-50 transition-opacity duration-300 group-hover:opacity-70 -z-10" />
+
+                            {/* Icon container */}
+                            <div className="inline-flex rounded-2xl bg-slate-900/50 border-2 border-blue-500/30 transition-all duration-300 group-hover:border-blue-500/60 group-hover:bg-blue-950/50">
+                                <Image
+                                    src="/all-courses.gif"
+                                    alt="book"
+                                    width={100}
+                                    height={100}
+                                    className="relative z-10"
+                                />
+                            </div>
                         </div>
+
 
                         <h2 className="text-4xl text-white mb-3 tracking-wide">
                             Ready to Start Learning?
                         </h2>
-                        
+
                         <p className=" text-gray-400 mb-8 max-w-md mx-auto">
-                            Your coding journey begins here! Explore our courses 
+                            Your coding journey begins here! Explore our courses
                             and start building real projects.
                         </p>
 
                         {/* CTA */}
                         <Link href={"/courses"}>
-                            <Button 
-                                variant={'pixel'} 
+                            <Button
+                                variant={'pixel'}
                                 size={'lg'}
                                 className="rounded-none py-5"
                             >
-                              BROWSE ALL COURSES
+                                BROWSE ALL COURSES
                             </Button>
                         </Link>
 

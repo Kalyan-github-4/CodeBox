@@ -2,10 +2,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { 
-  ChartNoAxesColumnDecreasing, 
-  Zap, 
-  Clock, 
+import {
+  ChartNoAxesColumnDecreasing,
+  Zap,
+  Clock,
   Users,
   Lock,
   Unlock
@@ -88,7 +88,7 @@ const CourseList = () => {
   };
 
   const getDifficultyIcon = (difficulty: string) => {
-    switch(difficulty?.toLowerCase()) {
+    switch (difficulty?.toLowerCase()) {
       case 'easy': return '🟢';
       case 'medium': return '🟡';
       case 'hard': return '🔴';
@@ -117,32 +117,25 @@ const CourseList = () => {
         <Link href={'/courses/' + course?.id} key={index}>
           <div className="group relative overflow-hidden border-2 border-purple-500/30 
                         rounded-2xl bg-linear-to-br from-slate-900/80 to-slate-950/80 
-                        backdrop-blur-sm hover:border-cyan-500/50 
-                        transition-all duration-500 hover:scale-[1.02]
-                        hover:shadow-2xl hover:shadow-purple-500/20">
-            
-            {/* Glow Effect */}
-            <div className="absolute -inset-1 bg-linear-to-r from-purple-600 to-cyan-600 
-                          rounded-2xl blur opacity-0 group-hover:opacity-20 
-                          transition-opacity duration-500" />
-            
+                        backdrop-blur-sm">
+
             {/* Course Image */}
             <div className="relative h-48 overflow-hidden rounded-t-xl">
-              <Image 
-                src={course?.bannerImage?.trimEnd() || '/placeholder-course.jpg'} 
-                alt={course?.title} 
+              <Image
+                src={course?.bannerImage?.trimEnd() || '/placeholder-course.jpg'}
+                alt={course?.title}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-transparent to-transparent" />
-              
+
               {/* Level Badge */}
               <div className={`absolute top-4 right-4 px-4 py-1 rounded-full 
                             bg-linear-to-r ${getLevelColor(course?.level)} 
                             font-game text-sm text-white shadow-lg`}>
                 {course?.level}
               </div>
-              
+
               {/* Progress Indicator */}
               {/* <div className="absolute bottom-4 left-4 right-4">
                 <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
@@ -193,7 +186,7 @@ const CourseList = () => {
               <div className="flex flex-wrap gap-2">
                 {course?.chapters?.slice(0, 3).map((chapter, idx) => (
                   chapter.exercises?.slice(0, 1).map((exercise, exIdx) => (
-                    <span 
+                    <span
                       key={`${idx}-${exIdx}`}
                       className="px-3 py-1 rounded-full bg-slate-800/50 text-sm 
                                font-game border border-slate-700 text-cyan-100"
